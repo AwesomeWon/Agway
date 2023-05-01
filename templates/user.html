@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<body>
+    <div align="center">
+        <h1>Hello Agwayen</h1>
+        <p>You are on you "private" page!</p>
+        <p>Where no-one (besides ted E) is spying on you</p>
+    </div>
+    <br />
+    <div align="center">
+        <p>The current user using this page is {{user}}.</p>
+    </div>
+    <div class="card">
+        <form action="#" method="post">
+            <input type="email"
+                   name="email"
+                   placeholder="enter email"
+                   value="{{email if email}}"
+            >
+            <input type="submit" value="submit" />
+        </form>
+    </div>
+    <br />
+    <div class="card">
+        <div class="card-header">
+            </div>
+        <div class="card-body">
+            <h5 class="card-title">logout of your account</h5>
+            <a href="/users/logout" class="btn btn-primary">logout</a>
+        </div>
+    </div>
+</body>
+{% endblock %}

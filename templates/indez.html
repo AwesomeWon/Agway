@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+    <img src="{{url_for('static', filename='images/Awgay flag.PNG')}}"
+         alt="Agway Flag"
+         class="img-thumbnail"
+         height="2458">
+    {% for x in listOfPeople %}
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="{{url_for('static', filename='images/Awgay flag.PNG')}}"
+                     class="card-img" alt="{{x}}">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{x}}</h5>
+                    <a href="/info/{{x}}" class="btn btn-primary">Link here</a>
+                    <p class="card-text"><small class="text-muted">This post was made by Thomas</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    {% endfor %}
+    <div class="card">
+        <div class="card-header">
+            </div>
+        <div class="card-body">
+            <h5 class="card-title">View all of our users</h5>
+            <a href="/users/view" class="btn btn-primary">View</a>
+        </div>
+    </div>
+{% endblock %}
